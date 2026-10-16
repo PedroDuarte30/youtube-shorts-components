@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0f17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.glow-card {
+    position: relative;
+    width: 280px;
+    padding: 30px 24px;
+    background: #161e2e;
+    border-radius: 16px;
+    border: 2px solid #2e3a52;
+    color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.glow-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.glow-card p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.glow-card button {
+    width: 100%;
+    padding: 10px;
+    background: #1e293b;
+    border: 2px solid #334155;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.glow-card:hover {
+    border-color: #8b5cf6;
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.35);
+}
+
+.glow-card:hover button {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+}
