@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Notification Toast</title>
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="toast" id="toast">
+      <div class="toast-content">
+        <div class="icon-box" id="iconBox">
+          <i class="fa-solid fa-download" id="icon"></i>
+        </div>
+        <div class="message">
+          <span class="text-1" id="title">Downloading file</span>
+          <span class="text-2" id="subtitle"
+            >Saving a file to the system</span
+          >
+        </div>
+      </div>
+      <i class="fa-solid fa-xmark close"></i>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <script src="src/js/main.js"></script>
+  </body>
+</html>
