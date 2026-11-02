@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #030712;
+    background-image:
+    radial-gradient(at 50% 50%, rgba(99, 102, 241, 0.12) 0px, transparent 60%),
+    radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.08) 0px, transparent 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-container {
+    perspective: 1000px;
+}
+
+.border-beam-card {
+    position: relative;
+    width: 320px;
+    border-radius: 20px;
+    background: rgba(17, 24, 39, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.beam-tracer {
+    position: absolute;
+    inset: -150%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 280deg,
+        #8b5cf6 320deg,
+        #ec4899 340deg,
+        #3b82f6 360deg
+    );
+    animation: rotateBeam 4s linear infinite;
+    pointer-events: none;
+}
+
+.card-inner {
+    position: relative;
+    z-index: 1;
+    background: #0b0f17;
+    border-radius: 19px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-badge {
+    align-self: flex-start;
+    padding: 4px 10px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 20px;
+    color: #a78bfa;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-inner h3 {
+    color: #f9fafb;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.card-inner p {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.card-btn {
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: #f9fafb;
+    color: #030712;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.card-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+@keyframes rotateBeam {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

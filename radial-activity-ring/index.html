@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <title>Radial Activity Ring</title>
+</head>
+<body>
+    <div class="ring-card">
+  <div class="ring-container">
+    <svg class="ring-svg" viewBox="0 0 200 200">
+      <defs>
+        <linearGradient id="grad-outer" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#8b5cf6" />
+          <stop offset="100%" stop-color="#3b82f6" />
+        </linearGradient>
+        <linearGradient id="grad-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ec4899" />
+          <stop offset="100%" stop-color="#f43f5e" />
+        </linearGradient>
+      </defs>
+
+      <circle class="ring-bg" cx="100" cy="100" r="80" stroke-width="12" />
+      <circle class="ring-progress outer" cx="100" cy="100" r="80" stroke-width="12" />
+
+      <circle class="ring-bg" cx="100" cy="100" r="60" stroke-width="12" />
+      <circle class="ring-progress inner" cx="100" cy="100" r="60" stroke-width="12" />
+    </svg>
+
+    <div class="ring-content">
+      <span class="value">84%</span>
+      <span class="label">Target Met</span>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="dot outer-dot"></span>
+      <div class="stat-info">
+        <span class="stat-name">Activity</span>
+        <span class="stat-val">2,840 kcal</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <span class="dot inner-dot"></span>
+      <div class="stat-info">
+        <span class="stat-name">Goal</span>
+        <span class="stat-val">48 min</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
