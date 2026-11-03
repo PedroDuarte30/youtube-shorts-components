@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f1f2f4;
+  background-image: 
+    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.1) 0px, transparent 60%),
+    radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.1) 0px, transparent 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  perspective: 1000px;
+}
+
+.cyber-btn {
+  position: relative;
+  background: #090d16;
+  color: #00f0ff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  padding: 18px 36px;
+  border: 2px solid #00f0ff;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 
+    0 0 15px rgba(0, 240, 255, 0.4),
+    inset 0 0 15px rgba(0, 240, 255, 0.2);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.cyber-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.cyber-btn:hover {
+  background: #00f0ff;
+  color: #030712;
+  border-color: #ff007f;
+  box-shadow: 
+    0 0 25px #00f0ff,
+    0 0 50px #ff007f,
+    inset 0 0 20px #030712;
+  animation: buttonGlitch 0.3s infinite;
+}
+
+.text {
+  position: relative;
+  z-index: 3;
+}
+
+.text::before,
+.text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.cyber-btn:hover .text::before {
+  color: #ff007f;
+  left: 2px;
+  text-shadow: -2px 0 #00f0ff;
+  clip-path: rect(24px, 550px, 90px, 0);
+  animation: glitchAnim 0.3s infinite linear alternate-reverse;
+}
+
+.cyber-btn:hover .text::after {
+  color: #00f0ff;
+  left: -2px;
+  text-shadow: 2px 0 #ff007f;
+  clip-path: rect(85px, 550px, 140px, 0);
+  animation: glitchAnim2 0.3s infinite linear alternate-reverse;
+}
+
+@keyframes glitchAnim {
+  0% { clip-path: rect(10px, 9999px, 44px, 0); transform: skew(0.3deg); }
+  20% { clip-path: rect(80px, 9999px, 12px, 0); transform: skew(0.8deg); }
+  40% { clip-path: rect(35px, 9999px, 70px, 0); transform: skew(0.1deg); }
+  60% { clip-path: rect(5px, 9999px, 95px, 0); transform: skew(0.5deg); }
+  80% { clip-path: rect(50px, 9999px, 20px, 0); transform: skew(0.2deg); }
+  100% { clip-path: rect(15px, 9999px, 60px, 0); transform: skew(0.7deg); }
+}
+
+@keyframes glitchAnim2 {
+  0% { clip-path: rect(50px, 9999px, 10px, 0); transform: skew(0.5deg); }
+  20% { clip-path: rect(15px, 9999px, 80px, 0); transform: skew(0.2deg); }
+  40% { clip-path: rect(65px, 9999px, 30px, 0); transform: skew(0.9deg); }
+  60% { clip-path: rect(20px, 9999px, 55px, 0); transform: skew(0.3deg); }
+  80% { clip-path: rect(90px, 9999px, 5px, 0); transform: skew(0.6deg); }
+  100% { clip-path: rect(40px, 9999px, 75px, 0); transform: skew(0.1deg); }
+}
+
+@keyframes buttonGlitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
