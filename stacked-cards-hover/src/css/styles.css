@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #1e3269;
+    background-image:
+    radial-gradient(at 50% 50%, rgba(245, 158, 11, 0.12) 0px, transparent 60%),
+    radial-gradient(at 0% 0%, rgba(239, 68, 68, 0.08) 0px, transparent 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    perspective: 1000px;
+}
+
+.stack-container {
+    position: relative;
+    width: 320px;
+    height: 240px;
+    cursor: pointer;
+}
+
+.stack-card {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.card-1 {
+    z-index: 3;
+    transform: translateY(0) rotate(0deg) scale(1);
+}
+
+.card-2 {
+    z-index: 2;
+    transform: translateY(-12px) rotate(-3deg) scale(0.96);
+    opacity: 0.85;
+}
+
+.card-3 {
+    z-index: 1;
+    transform: translateY(-24px) rotate(3deg) scale(0.92);
+    opacity: 0.7;
+}
+
+.stack-container:hover .card-1 {
+    transform: translateY(-90px) rotate(0deg) scale(1.02);
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+}
+
+.stack-container:hover .card-2 {
+    transform: translateY(30px) rotate(-6deg) scale(1);
+    opacity: 1;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.stack-container:hover .card-3 {
+    transform: translateY(150px) rotate(6deg) scale(0.98);
+    opacity: 1;
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.card-badge {
+    align-self: flex-start;
+    padding: 4px 10px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 20px;
+    color: #fbbf24;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+.stack-card h3 {
+    color: #f9fafb;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stack-card p {
+    color: #9ca3af;
+    font-size: 0.825rem;
+    line-height: 1.4;
+}
