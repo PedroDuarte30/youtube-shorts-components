@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Kanban Board App 🔥</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+  <div class="add-task-bar">
+    <input type="text" id="new-task-title" placeholder="Task title..." />
+    <select id="new-task-badge">
+      <option value="Frontend">Frontend</option>
+      <option value="Backend">Backend</option>
+      <option value="Design">Design</option>
+    </select>
+    <button onclick="addTask()">+ Add Task</button>
+  </div>
+
+  <div class="kanban-board">
+    <div class="kanban-column" id="todo-column" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <h3>To Do</h3>
+      <div class="task-list">
+        <div class="task-card" draggable="true" ondragstart="drag(event)" id="task-1">
+          <div class="task-header">
+            <span class="task-badge">Frontend</span>
+            <button class="delete-btn" onclick="removeTask(event)">&times;</button>
+          </div>
+          <h4>Glassmorphism UI</h4>
+          <p>Implement blur effects and soft borders.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="kanban-column" id="done-column" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <h3>Done</h3>
+      <div class="task-list">
+        <div class="task-card" draggable="true" ondragstart="drag(event)" id="task-2">
+          <div class="task-header">
+            <span class="task-badge">Design</span>
+            <button class="delete-btn" onclick="removeTask(event)">&times;</button>
+          </div>
+          <h4>Color Palette</h4>
+          <p>Establish Amber & Sunset glow system.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="src/js/main.js"></script>
+</body>
+</html>
