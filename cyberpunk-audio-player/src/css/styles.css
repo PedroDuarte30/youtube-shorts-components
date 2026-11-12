@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #030712;
+    background-image:
+    radial-gradient(at 50% 50%, rgba(245, 158, 11, 0.1) 0px, transparent 60%),
+    radial-gradient(at 0% 0%, rgba(239, 68, 68, 0.08) 0px, transparent 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 360px;
+}
+
+.player-card {
+    background: rgba(17, 24, 39, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.album-art {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #1f2937 0%, #111827 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(245, 158, 11, 0.2);
+}
+
+.disc {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+.playing .disc {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.track-info {
+    text-align: center;
+}
+
+.track-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 20px;
+    color: #fbbf24;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.track-info h3 {
+    color: #f9fafb;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.track-info p {
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+.visualizer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    height: 48px;
+    width: 100%;
+}
+
+.bar {
+    width: 6px;
+    height: 8px;
+    background: linear-gradient(180deg, #ef4444, #f59e0b);
+    border-radius: 4px;
+    transition: height 0.15s ease;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+.play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 28px rgba(245, 158, 11, 0.45);
+}
+
+.play-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-pause {
+    display: none;
+}
+
+.playing .icon-play {
+    display: none;
+}
+
+.playing .icon-pause {
+    display: block;
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <title>Cyberunk Audio Player</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="player-card" id="player">
+        
+        <div class="album-art">
+          <div class="art-glow"></div>
+          <div class="disc"></div>
+        </div>
+
+        <div class="track-info">
+          <span class="track-badge">Now Playing</span>
+          <h3>Cyber Neon Pulse</h3>
+          <p>Synthwave Engine • 128 BPM</p>
+        </div>
+
+        <div class="visualizer" id="visualizer">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="controls">
+          <button class="play-btn" id="playBtn" onclick="togglePlay()">
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5,3 19,12 5,21"></polygon>
+            </svg>
+            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/js/main.js"></script>
+  </body>
+</html>
