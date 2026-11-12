@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <title>Pomodoro Timer</title>
+</head>
+<body>
+    <div class="container">
+  <div class="pomodoro-card">
+    <div class="card-header">
+      <span class="badge" id="modeBadge">Deep Work</span>
+      <div class="mode-switch">
+        <button class="mode-btn active" onclick="setMode(25, 'Deep Work', this)">25m</button>
+        <button class="mode-btn" onclick="setMode(5, 'Short Break', this)">5m</button>
+      </div>
+    </div>
+
+    
+    <div class="timer-wrapper">
+      <svg class="progress-ring" width="220" height="220">
+        <defs>
+          <linearGradient id="amberSunset" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f59e0b" />
+            <stop offset="100%" stop-color="#ef4444" />
+          </linearGradient>
+        </defs>
+        <circle class="ring-bg" cx="110" cy="110" r="96" />
+        <circle class="ring-progress" id="progressRing" cx="110" cy="110" r="96" />
+      </svg>
+      <div class="time-display">
+        <h2 id="timeText">25:00</h2>
+        <p id="statusText">Ready to focus</p>
+      </div>
+    </div>
+
+    
+    <div class="controls">
+      <button class="control-btn primary" id="startPauseBtn" onclick="toggleTimer()">Start</button>
+      <button class="control-btn secondary" onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+</div>
+<script src="src/js/main.js"></script>
+</body>
+</html>

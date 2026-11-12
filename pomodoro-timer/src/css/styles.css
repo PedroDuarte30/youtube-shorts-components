@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #030712;
+    background-image:
+    radial-gradient(at 50% 50%, rgba(245, 158, 11, 0.1) 0px, transparent 60%),
+    radial-gradient(at 0% 0%, rgba(239, 68, 68, 0.08) 0px, transparent 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 360px;
+}
+
+.pomodoro-card {
+    background: rgba(17, 24, 39, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 26px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+}
+
+.card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    padding: 4px 12px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 20px;
+    color: #fbbf24;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.mode-switch {
+    display: flex;
+    background: rgba(11, 15, 23, 0.8);
+    padding: 3px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mode-btn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.mode-btn.active {
+    background: rgba(245, 158, 11, 0.18);
+    color: #fbbf24;
+}
+
+.timer-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.25));
+}
+
+.ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.06);
+    stroke-width: 8;
+}
+
+.ring-progress {
+    fill: none;
+    stroke: url(#amberSunset);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+.time-display {
+    position: absolute;
+    text-align: center;
+}
+
+.time-display h2 {
+    color: #f9fafb;
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+.time-display p {
+    color: #9ca3af;
+    font-size: 0.78rem;
+    margin-top: 2px;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.control-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.control-btn.primary {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+}
+
+.control-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(245, 158, 11, 0.4);
+}
+
+.control-btn.secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.control-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
