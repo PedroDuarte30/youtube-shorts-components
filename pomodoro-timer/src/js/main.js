@@ -4,7 +4,6 @@ const statusText = document.getElementById('statusText');
 const startPauseBtn = document.getElementById('startPauseBtn');
 const modeBadge = document.getElementById('modeBadge');
 
-// Cálculo matemático da circunferência do círculo (2 * PI * r)
 const radius = ring.r.baseVal.value;
 const circumference = 2 * Math.PI * radius;
 
@@ -21,7 +20,6 @@ function updateDisplay() {
   const secs = remainingSeconds % 60;
   timeText.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 
-  // Atualiza o preenchimento do anel SVG
   const progress = remainingSeconds / totalSeconds;
   const offset = circumference - progress * circumference;
   ring.style.strokeDashoffset = offset;
